@@ -5,7 +5,7 @@
   "main": "sendMail.js",
   "scripts": {
     "start": "node sendMail.js",
-    "build": "cp -r static/* public/"
+    "build": "cp -r static public/"
   },
   "keywords": [],
   "author": "",
