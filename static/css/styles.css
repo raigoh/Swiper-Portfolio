@@ -84,6 +84,11 @@ main aside ul li i {
   width: 3rem;
 }
 
+/* Hide Checkbox */
+.menu-toggle {
+  display: none;
+}
+
 /* Main Content Wrapper */
 .main_wrapper {
   width: calc(100% - 26rem);
@@ -565,4 +570,77 @@ form .custom_btn {
 
 .swiper-cube .swiper-cube-shadow {
   display: none;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  main aside {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  main aside ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    background: var(--sidebar-background);
+    position: absolute;
+    top: 55px; /* Adjust according to your header height */
+    left: 0;
+  }
+
+  main aside ul li {
+    padding: 0.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  main aside ul li i {
+    margin-right: 0;
+    font-size: 1.5rem;
+    width: auto;
+  }
+
+  main aside ul li p {
+    gap: 30px;
+  }
+
+  main .content {
+    padding-top: 60px; /* Adjust this value according to the header height */
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    background: var(--primary-color);
+    border-radius: 2px;
+    height: 4px;
+    width: 25px;
+    margin: 3px 0;
+  }
+
+  .menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
 }
