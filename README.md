@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Portfolio Website
+# Swiper Portfolio
 
 This repository contains the source code for a personal portfolio website. The site showcases various sections including Home, About Me, Services, CV, Gallery, and Contact Me. It uses SwiperJS for a cube effect on the main slides, NodeJS for handling email functionality, and PM2 to keep the mailing service active.
 
@@ -117,6 +116,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - **Email**: [vikationu@gmail.com](mailto:vikationu@gmail.com)
 - **LinkedIn**: [Raigo Hoim](https://www.linkedin.com/in/raigo-hoim/)
 - **Facebook**: [Raigo Hoim](https://www.facebook.com/raigo.hoim/)
-=======
-
->>>>>>> 98ed630f269d558cc4025d1d56abd5c716c71958
