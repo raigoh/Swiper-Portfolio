@@ -4,8 +4,8 @@
   "description": "Personal portfolio website using SwiperJS and Node.js for email handling.",
   "main": "sendMail.js",
   "scripts": {
-    "start": "node sendMail.js",  
-    "build": "your-build-command"
+    "start": "node sendMail.js",
+    "build": "cp -r static/* public/"
   },
   "keywords": [],
   "author": "",
