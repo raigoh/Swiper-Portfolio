@@ -643,4 +643,55 @@ form .custom_btn {
   .menu-toggle:checked + .menu-icon + ul {
     display: flex;
   }
+
+  main .main_wrapper {
+    width: 120%;
+  }
+
+  .home_content {
+    position: relative; /* Ensure the container has a position for absolute positioning */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    margin-top: -1rem; /* Adjust as needed */
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .heading2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .home_content .home_text {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .home_content .home_img {
+    position: absolute;
+    width: 80%;
+    left: -0.5rem;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  .home_img .top-right-corner,
+  .bottom-left-corner,
+  .line1,
+  .line2 {
+    display: none;
+  }
+
+  .custom_btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 5px;
+  }
 }
