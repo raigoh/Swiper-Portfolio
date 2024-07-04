@@ -1,11 +1,11 @@
 {
-  "name": "portfolio",
+  "name": "swiper-portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Personal portfolio website using SwiperJS and Node.js for email handling.",
+  "main": "sendMail.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Placeholder build script\""
+    "start": "node sendMail.js",  
+    "build": "your-build-command"
   },
   "keywords": [],
   "author": "",
