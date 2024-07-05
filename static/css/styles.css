@@ -661,18 +661,18 @@ form .custom_btn {
   }
 
   .heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .heading2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-top: 10px;
   }
 
   .home_content .home_text {
     width: 100%;
     max-width: 600px; /* Max width for better readability */
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: left;
     z-index: 1;
   }
