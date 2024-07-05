@@ -574,13 +574,7 @@ form .custom_btn {
 
 /* Mobile View */
 @media (max-width: 768px) {
-  main {
-    flex-direction: column;
-  }
-}
-
-/* Sidebar Section */
-@media (max-width: 768px) {
+  /* Sidebar Section */
   main aside {
     width: 100%;
     height: auto;
@@ -646,12 +640,11 @@ form .custom_btn {
   .menu-toggle:checked + .menu-icon + ul {
     display: flex;
   }
-}
 
-/* Home Section */
-@media (max-width: 768px) {
+  /* Home Section */
   .main_wrapper {
     width: 100%; /* Set the main wrapper to 100% width */
+    overflow: hidden;
   }
 
   .home_content {
@@ -697,10 +690,8 @@ form .custom_btn {
     font-size: 1.2rem;
     margin: 5px;
   }
-}
 
-/* About Section */
-@media (max-width: 768px) {
+  /* About Section */
   .about_content {
     grid-template-columns: 80% 20%;
     margin-top: 3rem; /* Reduce top margin */
@@ -745,10 +736,8 @@ form .custom_btn {
   .about_left br {
     display: none;
   }
-}
 
-/* Services Section */
-@media (max-width: 768px) {
+  /* Services Section */
   .service_content .heading {
     margin-top: 4rem;
   }
