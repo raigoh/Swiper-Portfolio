@@ -91,7 +91,7 @@ main aside ul li i {
 
 /* Main Content Wrapper */
 .main_wrapper {
-  width: calc(100% - 26rem);
+  width: 100%;
   overflow: hidden;
 }
 
@@ -652,6 +652,7 @@ form .custom_btn {
     align-items: center;
     justify-content: center;
     margin-top: 4rem;
+    margin-right: 20px;
   }
 
   .heading {
