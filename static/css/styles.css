@@ -755,6 +755,7 @@ form .custom_btn {
     overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
     border-radius: 0.4rem;
     transition: 0.3s;
+    -webkit-overflow-scrolling: touch;
   }
 
   .service_item::-webkit-scrollbar {
