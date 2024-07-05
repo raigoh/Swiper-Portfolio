@@ -645,7 +645,9 @@ form .custom_btn {
   }
 
   main .main_wrapper {
-    width: 120%;
+    width: 100%; /* Set the main wrapper to 100% width */
+    max-width: 120%; /* Limit the maximum width to 120% if needed */
+    margin: 0 auto; /* Center the main wrapper */
   }
 
   .home_content {
@@ -659,26 +661,27 @@ form .custom_btn {
   }
 
   .heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .heading2 {
-    font-size: 1.2rem;
+    font-size: 1.75rem;
     margin-top: 10px;
   }
 
   .home_content .home_text {
     width: 100%;
-    font-size: 1rem;
-    text-align: center;
+    max-width: 600px; /* Max width for better readability */
+    font-size: 1.5rem;
+    text-align: left;
     z-index: 1;
   }
 
   .home_content .home_img {
     position: absolute;
-    width: 80%;
-    left: -0.5rem;
-    opacity: 0.2;
+    width: 100%;
+    /* height: 100%; */
+    opacity: 0.1;
     z-index: -1;
   }
 
