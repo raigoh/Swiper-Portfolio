@@ -739,4 +739,46 @@ form .custom_btn {
   .about_left br {
     display: none;
   }
+
+  /* Services Section */
+  .service_content .heading {
+    margin-top: 4rem;
+  }
+
+  .service_row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .service_col {
+    width: 50%;
+    padding: 0.5rem;
+  }
+
+  .service_item {
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    max-height: 20rem;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    transition: 0.3s;
+  }
+
+  .service_item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service_item h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 700;
+  }
+
+  .service_item p {
+    font-size: 1.2rem;
+    overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
+    margin-right: 0px;
+  }
 }
