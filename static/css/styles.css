@@ -577,7 +577,7 @@ form .custom_btn {
   main {
     flex-direction: column;
   }
-
+  /* Sidebar Section */
   main aside {
     width: 100%;
     height: auto;
@@ -644,6 +644,7 @@ form .custom_btn {
     display: flex;
   }
 
+  /* Home Section */
   .main_wrapper {
     width: 100%; /* Set the main wrapper to 100% width */
   }
@@ -690,5 +691,38 @@ form .custom_btn {
     padding: 10px 20px;
     font-size: 1.2rem;
     margin: 5px;
+  }
+
+  /* About Section */
+  .about_content {
+    grid-template-columns: 1fr; /* Single column layout */
+    row-gap: 2rem; /* Gap between rows */
+    margin-top: 4rem; /* Reduce top margin */
+  }
+
+  .about_skill_box {
+    margin-top: 2rem;
+  }
+
+  .about_row {
+    width: 100%; /* Full width columns */
+    margin-bottom: 1rem; /* Add bottom margin */
+  }
+
+  .about_col {
+    width: 100%; /* Full width columns */
+    margin-bottom: 1rem; /* Add bottom margin */
+  }
+
+  .about_skill_box {
+    margin-top: 2rem; /* Reduce top margin */
+  }
+
+  .skill {
+    height: 1.5rem; /* Adjust skill bar height */
+  }
+
+  .about_border p::before {
+    min-width: 80px; /* Adjust label width */
   }
 }
