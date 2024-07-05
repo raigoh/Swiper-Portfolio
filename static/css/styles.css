@@ -577,6 +577,7 @@ form .custom_btn {
   main {
     flex-direction: column;
   }
+
   /* Sidebar Section */
   main aside {
     width: 100%;
@@ -695,9 +696,17 @@ form .custom_btn {
 
   /* About Section */
   .about_content {
-    grid-template-columns: 1fr; /* Single column layout */
-    row-gap: 2rem; /* Gap between rows */
-    margin-top: 4rem; /* Reduce top margin */
+    grid-template-columns: 80% 20%;
+    margin-top: 3rem; /* Reduce top margin */
+  }
+
+  .about_left .heading2 {
+    display: none;
+  }
+
+  .about_left p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 
   .about_skill_box {
@@ -705,13 +714,12 @@ form .custom_btn {
   }
 
   .about_row {
-    width: 100%; /* Full width columns */
-    margin-bottom: 1rem; /* Add bottom margin */
+    flex-wrap: wrap;
+    margin-top: 0;
   }
 
   .about_col {
     width: 100%; /* Full width columns */
-    margin-bottom: 1rem; /* Add bottom margin */
   }
 
   .about_skill_box {
@@ -722,7 +730,13 @@ form .custom_btn {
     height: 1.5rem; /* Adjust skill bar height */
   }
 
-  .about_border p::before {
-    min-width: 80px; /* Adjust label width */
+  .about_border {
+    margin-top: 0; /* Remove top margin for mobile */
+    margin-bottom: 1rem; /* Add bottom margin */
+  }
+
+  /* Reduce the space created by <br> elements */
+  .about_left br {
+    display: none;
   }
 }
