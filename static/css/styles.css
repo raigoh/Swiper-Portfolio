@@ -577,8 +577,10 @@ form .custom_btn {
   main {
     flex-direction: column;
   }
+}
 
-  /* Sidebar Section */
+/* Sidebar Section */
+@media (max-width: 768px) {
   main aside {
     width: 100%;
     height: auto;
@@ -644,8 +646,10 @@ form .custom_btn {
   .menu-toggle:checked + .menu-icon + ul {
     display: flex;
   }
+}
 
-  /* Home Section */
+/* Home Section */
+@media (max-width: 768px) {
   .main_wrapper {
     width: 100%; /* Set the main wrapper to 100% width */
   }
@@ -693,8 +697,10 @@ form .custom_btn {
     font-size: 1.2rem;
     margin: 5px;
   }
+}
 
-  /* About Section */
+/* About Section */
+@media (max-width: 768px) {
   .about_content {
     grid-template-columns: 80% 20%;
     margin-top: 3rem; /* Reduce top margin */
@@ -739,8 +745,10 @@ form .custom_btn {
   .about_left br {
     display: none;
   }
+}
 
-  /* Services Section */
+/* Services Section */
+@media (max-width: 768px) {
   .service_content .heading {
     margin-top: 4rem;
   }
