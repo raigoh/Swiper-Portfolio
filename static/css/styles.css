@@ -586,7 +586,6 @@ form .custom_btn {
     top: 0;
     left: 0;
     right: 0;
-    /* z-index: 1000; */
   }
 
   main aside ul {
@@ -697,7 +696,7 @@ form .custom_btn {
   }
 
   .about_left p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 0.5rem;
   }
 
