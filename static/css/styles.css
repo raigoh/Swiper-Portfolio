@@ -573,7 +573,7 @@ form .custom_btn {
 }
 
 /* Mobile View */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* Sidebar Section */
   main aside {
     width: 100%;
@@ -586,6 +586,7 @@ form .custom_btn {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
   }
 
   main aside ul {
