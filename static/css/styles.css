@@ -641,18 +641,17 @@ form .custom_btn {
     display: flex;
   }
 
-  /* Home Section */
   .main_wrapper {
     width: 100%; /* Set the main wrapper to 100% width */
     overflow: hidden;
   }
 
+  /* Home Section */
   .home_content {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 4rem;
-    margin-right: 20px;
   }
 
   .heading {
