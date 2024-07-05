@@ -582,11 +582,11 @@ form .custom_btn {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    /* z-index: 1000; */
   }
 
   main aside ul {
@@ -639,11 +639,6 @@ form .custom_btn {
 
   .menu-toggle:checked + .menu-icon + ul {
     display: flex;
-  }
-
-  .main_wrapper {
-    width: 100%; /* Set the main wrapper to 100% width */
-    overflow: hidden;
   }
 
   /* Home Section */
