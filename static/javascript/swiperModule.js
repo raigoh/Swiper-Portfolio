@@ -3,15 +3,15 @@ function initSwiper() {
 
   const swiperConfig = {
     effect: "cube",
-    allowTouchMove: false,
-    grabCursor: false,
+    allowTouchMove: isMobile, // Enable touch move for mobile
+    grabCursor: isMobile, // Enable grab cursor for mobile
     cubeEffect: {
       shadow: true,
       slideShadows: true,
       shadowOffset: isMobile ? 20 : 40,
       shadowScale: isMobile ? 0.94 : 0.6,
     },
-    mousewheel: true,
+    mousewheel: !isMobile, // Disable mousewheel on mobile
   };
 
   // Initialize Swiper
