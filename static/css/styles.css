@@ -760,9 +760,13 @@ form .custom_btn {
     box-sizing: border-box;
     margin-bottom: 1rem;
     max-height: 20rem;
-    overflow: hidden;
+    overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
     border-radius: 0.4rem;
     transition: 0.3s;
+  }
+
+  .service_item::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
   }
 
   .service_item i {
@@ -778,7 +782,14 @@ form .custom_btn {
 
   .service_item p {
     font-size: 1.2rem;
-    overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
-    margin-right: 0px;
+  }
+
+  .service_item:hover {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.437);
+  }
+
+  .service_item:hover i {
+    color: var(--primary-color);
   }
 }
