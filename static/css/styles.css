@@ -643,8 +643,6 @@ form .custom_btn {
 
   /* Home Section */
   .home_content {
-    display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 4rem;
   }
@@ -661,7 +659,6 @@ form .custom_btn {
   .home_content .home_text {
     width: 100%;
     padding-right: 0;
-    font-size: 1.5rem;
     text-align: center;
     z-index: 1;
   }
@@ -737,11 +734,6 @@ form .custom_btn {
     margin-top: 4rem;
   }
 
-  .service_row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .service_col {
     width: 50%;
     padding: 0.5rem;
@@ -749,13 +741,8 @@ form .custom_btn {
 
   .service_item {
     padding: 1rem;
-    box-sizing: border-box;
-    margin-bottom: 1rem;
     max-height: 20rem;
     overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
-    border-radius: 0.4rem;
-    transition: 0.3s;
-    -webkit-overflow-scrolling: touch;
   }
 
   .service_item::-webkit-scrollbar {
@@ -770,7 +757,6 @@ form .custom_btn {
   .service_item h3 {
     font-size: 1.5rem;
     margin: 1rem 0 0.5rem 0;
-    font-weight: 700;
   }
 
   .service_item p {
@@ -784,5 +770,91 @@ form .custom_btn {
 
   .service_item:hover i {
     color: var(--primary-color);
+  }
+
+  /* CV Section */
+  .cv_content .heading {
+    margin-top: 2rem;
+  }
+  .cv_boxes {
+    flex-direction: column; /* Stack boxes vertically on small screens */
+    align-items: center;
+  }
+
+  .cv_box {
+    flex: 1 1 100%; /* Full width for each box on small screens */
+    margin: 0; /* Adjust margin for better spacing */
+  }
+
+  .cv_box:hover {
+    transform: none;
+  }
+
+  /* Gallery Section */
+  .gallery_content {
+    margin-top: 4rem;
+  }
+
+  .gallery_content .heading {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .gallery_images figure {
+    flex: 1 1 100%; /* Full width for each figure on small screens */
+  }
+
+  .gallery_images img {
+    height: auto; /* Adjust height for better responsiveness */
+  }
+
+  /* Contact Section */
+  .contact_content .heading {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .contact_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_info {
+    width: 100%; /* Full width on small screens */
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(100px, 1fr)
+    ); /* Create grid layout */
+    gap: 20px; /* Add gap between grid items */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 0;
+  }
+
+  .contact_form {
+    width: 100%; /* Full width on small screens */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 0px;
+  }
+
+  .form_group {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SocialLinks {
+    margin: 10px auto; /* Center social links on mobile */
+  }
+
+  .form_group {
+    flex-direction: column; /* Stack input fields vertically */
+    margin-bottom: 10px;
+  }
+
+  form input.half_width {
+    width: 100%; /* Full width for half-width inputs on mobile */
   }
 }
