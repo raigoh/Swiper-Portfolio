@@ -1,6 +1,6 @@
 # Swiper Portfolio
 
-This repository contains the source code for a personal portfolio website. The site showcases various sections including Home, About Me, Services, CV, Gallery, and Contact Me. It uses SwiperJS for a cube effect on the main slides, NodeJS for handling email functionality, and PM2 to keep the mailing service active.
+This repository contains the source code for a personal portfolio website. The site showcases various sections including Home, About Me, Services, CV, Gallery, and Contact Me. It uses SwiperJS for a cube effect on the main slides and coverflow effect on gallery slide, NodeJS for handling email functionality, and PM2 to keep the mailing service active.
 
 ## Table of Contents
 

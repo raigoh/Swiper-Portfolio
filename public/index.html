@@ -52,7 +52,7 @@
       <!-- Main Swiper with cube effect -->
       <div class="main_wrapper">
         <div class="swiper mySwiper">
-          <div class="SlideContainer swiper-wrapper">
+          <div class="swiper-wrapper">
             <!-- Home slide -->
             <div class="swiper-slide home-slider">
               <div class="home_content">
@@ -293,44 +293,103 @@
             <div class="swiper-slide gallery">
               <div class="gallery_content">
                 <h2 class="heading"><span>Gallery</span></h2>
-                <div class="gallery_images">
-                  <figure class="active">
-                    <figcaption>Sign Up Form.</figcaption>
-                    <a
-                      href="https://github.com/raigoh/Sign-up-Form"
-                      target="_blank"
-                    >
-                      <img
-                        src="/static/images/Sign-up-Form_image.png"
-                        alt="Image 1"
-                      />
-                    </a>
-                  </figure>
-                  <figure>
-                    <figcaption>Admin Dashboard.</figcaption>
-                    <a
-                      href="https://github.com/raigoh/Admin-Dashboard"
-                      target="_blank"
-                    >
-                      <img
-                        src="/static/images/admin_dashboard.png"
-                        alt="Image 2"
-                      />
-                    </a>
-                  </figure>
-                  <figure>
-                    <figcaption>Python Battleship game.</figcaption>
-                    <a
-                      href="https://github.com/raigoh/Battleship"
-                      target="_blank"
-                    >
-                      <img src="/static/images/battleship.png" alt="Image 3" />
-                    </a>
-                  </figure>
-                </div>
-                <div class="pagination">
-                  <button class="prev">&#10094;</button>
-                  <button class="next">&#10095;</button>
+                <!-- Carousel slider -->
+                <div class="swiper-container gallery-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
+                      <div class="swiper-carousel-animate-opacity">
+                        <a
+                          href="https://github.com/raigoh/Swiper-Portfolio"
+                          target="_blank"
+                        >
+                          <img
+                            src="/static/images/swiper-portfolio.png"
+                            alt=""
+                          />
+                          <div class="slide-content">
+                            <h2>Swiper Portfolio</h2>
+                            <p>
+                              This repository contains the source code for a
+                              personal portfolio website featuring sections such
+                              as Home, About Me, Services, CV, Gallery, and
+                              Contact Me. It uses SwiperJS for dynamic slide
+                              effects, NodeJS for email functionality, and PM2
+                              to maintain the mailing service.
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-carousel-animate-opacity">
+                        <a
+                          href="https://github.com/raigoh/Sign-up-Form"
+                          target="_blank"
+                        >
+                          <img
+                            src="/static/images/Sign-up-Form_image.png"
+                            alt=""
+                          />
+                          <div class="slide-content">
+                            <h2>Sign Up Form</h2>
+                            <p>
+                              This is a simple sign-up page template created
+                              with HTML and CSS. It provides a clean and
+                              responsive design for user registration.
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-carousel-animate-opacity">
+                        <a
+                          href="https://github.com/raigoh/Admin-Dashboard"
+                          target="_blank"
+                        >
+                          <img
+                            src="/static/images/admin_dashboard.png"
+                            alt=""
+                          />
+                          <div class="slide-content">
+                            <h2>Admin Dashboard</h2>
+                            <p>
+                              This repository contains the HTML and CSS code for
+                              a static webpage called "Admin Dashboard." It is a
+                              user interface template that can be used as a
+                              starting point for creating an admin dashboard for
+                              web applications.
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-carousel-animate-opacity">
+                        <a
+                          href="https://github.com/raigoh/Battleship"
+                          target="_blank"
+                        >
+                          <img src="/static/images/battleship.png" alt="" />
+                          <div class="slide-content">
+                            <h2>Battleship</h2>
+                            <p>
+                              This is a simple Python implementation of the
+                              classic game Battleship. The game is played on an
+                              8x8 grid where you try to sink hidden battleships
+                              by guessing their locations.
+                            </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                  <!-- Add Navigation Arrows -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
                 </div>
               </div>
             </div>
@@ -414,7 +473,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script src="/static/javascript/swiperModule.js"></script>
     <script src="/static/javascript/formHandler.js"></script>
-    <script src="/static/javascript/gallery-slider.js"></script>
-    <script src="/static/javascript/gallery-figure.js"></script>
   </body>
 </html>
