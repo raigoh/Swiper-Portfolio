@@ -1,45 +1,32 @@
 require("dotenv").config();
 
-const express = require("express");
-const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const cors = require("cors");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
+  },
+});
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
-
-app.post("/send-email", (req, res) => {
-  const { name, email, message } = req.body;
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD,
-    },
-  });
-
+function sendMail(to, subject, text) {
   const mailOptions = {
     from: process.env.EMAIL,
-    to: process.env.EMAIL,
-    subject: `Message from ${name}`,
-    text: `From: ${email}\n\n${message}`,
+    to: to,
+    subject: subject,
+    text: text,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error("Error sending email:", error);
-      return res.status(500).send(error.toString());
+      console.log("Error sending an email:", error);
+      return res
+        .status(500)
+        .send("Error sending an email. Please try again later");
+    } else {
+      console.log("Email sent: " + info.response);
+      return res.status(200).send("Email sent successfully");
     }
-    console.log("Email sent:", info.response);
-    res.status(200).send("Email sent: " + info.response);
   });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+}
