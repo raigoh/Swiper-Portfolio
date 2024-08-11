@@ -4,7 +4,9 @@ document
     event.preventDefault();
 
     const form = this;
-    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButton =
+      form.querySelector('button[type="submit"]') ||
+      form.querySelector('input[type="submit"]');
     const formData = new FormData(form);
     const data = {
       name: formData.get("name"),
@@ -14,13 +16,16 @@ document
 
     // Basic validation
     if (!data.name || !data.email || !data.message) {
-      alert("Please fill in all fields.");
+      showNotification("Please fill in all fields.", "error");
       return;
     }
 
-    // Disable submit button and show loading state
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
+    // Disable submit button and show loading state if it exists
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent =
+        submitButton.tagName === "INPUT" ? "Sending..." : "Sending...";
+    }
 
     fetch("/.netlify/functions/send-email", {
       method: "POST",
@@ -44,9 +49,12 @@ document
         );
       })
       .finally(() => {
-        // Re-enable submit button and restore text
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit";
+        // Re-enable submit button and restore text if it exists
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent =
+            submitButton.tagName === "INPUT" ? "Submit" : "Submit";
+        }
       });
   });
 
