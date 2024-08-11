@@ -408,11 +408,12 @@ main aside ul li i {
 }
 
 .swiper-container .swiper-wrapper .swiper-carousel-animate-opacity img {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: block;
   object-fit: fill;
   border-radius: 8px;
+  align-items: center;
 }
 
 .swiper-container .swiper-wrapper .slide-content {

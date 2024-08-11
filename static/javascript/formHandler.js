@@ -10,22 +10,18 @@ document
       message: formData.get("message"),
     };
 
-    fetch("http://localhost:3000/send-email", {
+    fetch("/.netlify/functions/send-email", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(data),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.text();
+        return response.json();
       })
       .then((data) => {
         alert("Email sent successfully!");
-        // Clear the form inputs
         document.getElementById("contact-form").reset();
       })
       .catch((error) => {
