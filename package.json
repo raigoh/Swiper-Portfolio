@@ -5,7 +5,8 @@
   "main": "sendMail.js",
   "scripts": {
     "start": "start sendMail.js",
-    "build": "cp -r static public/"
+    "build": "cp -r static public/",
+    "netlify": "netlify dev"
   },
   "keywords": [],
   "author": "",
