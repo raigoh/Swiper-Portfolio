@@ -35,8 +35,24 @@ body {
   height: 100vh;
   background: var(--background-color);
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 2.5rem;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Use flexbox for better layout control */
+.home_content,
+.about_content,
+.service_row,
+.cv_boxes,
+.contact_container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Main Layout */
@@ -119,6 +135,7 @@ main aside ul li i {
 }
 
 .heading2 {
+  font-size: 2.4rem;
   font-weight: 600;
   padding-bottom: 2rem;
   margin-top: 25px;
@@ -563,289 +580,115 @@ form .custom_btn {
   display: none;
 }
 
-/* Mobile View */
-@media (max-width: 767px) {
-  /* Sidebar Section */
-  main aside {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-  }
-
-  main aside ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem;
-    background: var(--sidebar-background);
-    position: absolute;
-    top: 55px; /* Adjust according to your header height */
-    left: 0;
-  }
-
-  main aside ul li {
-    padding: 0.5rem 1rem;
-    gap: 1.5rem;
-  }
-
-  main aside ul li i {
-    margin-right: 0;
-    font-size: 1.5rem;
-    width: auto;
-  }
-
-  main aside ul li p {
-    gap: 30px;
-  }
-
-  main .content {
-    padding-top: 60px; /* Adjust this value according to the header height */
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .menu-icon span {
-    background: var(--primary-color);
-    border-radius: 2px;
-    height: 4px;
-    width: 25px;
-    margin: 3px 0;
-  }
-
-  .menu-toggle:checked + .menu-icon + ul {
-    display: flex;
-  }
-
-  /* Home Section */
-  .home_content {
-    justify-content: center;
-    margin-top: 4rem;
-  }
-
-  .heading {
-    font-size: 2.5rem;
-  }
-
-  .heading2 {
-    font-size: 1.75rem;
-    margin-top: 10px;
-  }
-
-  .home_content .home_text {
-    width: 100%;
-    padding-right: 0;
-    text-align: center;
-    z-index: 1;
-  }
-
-  .home_content .home_img {
-    position: absolute;
-    width: 100%;
-    opacity: 0.1;
-    z-index: -1;
-  }
-
-  .home_img .top-right-corner,
-  .bottom-left-corner,
-  .line1,
-  .line2 {
-    display: none;
-  }
-
-  .custom_btn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    margin: 5px;
-  }
-
-  /* About Section */
+/* Add media queries for different screen sizes */
+@media (max-width: 1200px) {
+  .home_content,
   .about_content {
-    grid-template-columns: 80% 20%;
-    margin-top: 3rem; /* Reduce top margin */
+    flex-direction: column;
   }
 
-  .about_left .heading2 {
-    display: none;
-  }
-
-  .about_left p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-  }
-
+  .home_content .home_text,
+  .home_content .home_img,
+  .about_left,
   .about_skill_box {
-    margin-top: 2rem;
-  }
-
-  .about_row {
-    flex-wrap: wrap;
-    margin-top: 0;
-  }
-
-  .about_col {
-    width: 100%; /* Full width columns */
-  }
-
-  .about_skill_box {
-    margin-top: 2rem; /* Reduce top margin */
-  }
-
-  .skill {
-    height: 1.5rem; /* Adjust skill bar height */
-  }
-
-  .about_border {
-    margin-top: 0; /* Remove top margin for mobile */
-    margin-bottom: 1rem; /* Add bottom margin */
-  }
-
-  /* Reduce the space created by <br> elements */
-  .about_left br {
-    display: none;
-  }
-
-  /* Services Section */
-  .service_content .heading {
-    margin-top: 4rem;
+    width: 100%;
   }
 
   .service_col {
     width: 50%;
-    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%; /* Slightly reduce base font size for smaller screens */
   }
 
-  .service_item {
-    padding: 1rem;
-    max-height: 20rem;
-    overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
-  }
-
-  .service_item::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-  }
-
-  .service_item i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .service_item h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem 0;
-  }
-
-  .service_item p {
-    font-size: 1.2rem;
-  }
-
-  .service_item:hover {
-    transform: none;
-    background-color: rgba(0, 0, 0, 0.437);
-  }
-
-  .service_item:hover i {
-    color: var(--primary-color);
-  }
-
-  /* CV Section */
-  .cv_content .heading {
-    margin-top: 2rem;
-  }
-  .cv_boxes {
-    flex-direction: column; /* Stack boxes vertically on small screens */
-    align-items: center;
-  }
-
-  .cv_box {
-    flex: 1 1 100%; /* Full width for each box on small screens */
-    margin: 0; /* Adjust margin for better spacing */
-  }
-
-  .cv_box:hover {
-    transform: none;
-  }
-
-  /* Gallery Section */
-  .gallery_content {
-    margin-top: 4rem;
-  }
-
-  .gallery_content .heading {
-    text-align: center;
-    padding: 1rem;
+  .service_col {
     width: 100%;
   }
 
-  .gallery_images figure {
-    flex: 1 1 100%; /* Full width for each figure on small screens */
-  }
-
-  .gallery_images img {
-    height: auto; /* Adjust height for better responsiveness */
-  }
-
-  /* Contact Section */
-  .contact_content .heading {
-    margin-top: 4rem;
-    text-align: center;
+  .cv_boxes {
+    flex-direction: column;
   }
 
   .contact_container {
     flex-direction: column;
-    align-items: center;
   }
 
-  .contact_info {
-    width: 100%; /* Full width on small screens */
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(100px, 1fr)
-    ); /* Create grid layout */
-    gap: 20px; /* Add gap between grid items */
-    justify-items: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    margin-top: 0;
-  }
-
+  .contact_info,
   .contact_form {
-    width: 100%; /* Full width on small screens */
-    margin-left: 0; /* Remove left margin */
-    margin-top: 0px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%; /* Further reduce base font size for mobile */
+  }
+
+  .home_img {
+    display: none; /* Hide image on very small screens */
   }
 
   .form_group {
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
 
-  .SocialLinks {
-    margin: 10px auto; /* Center social links on mobile */
+  .form_group input.half_width {
+    width: 100%;
+  }
+}
+
+/* Add smooth transitions for resize events */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Use viewport units for some dimensions */
+.home_img img {
+  max-height: 65vh;
+}
+
+/* Improve gallery responsiveness */
+.gallery_content .swiper-container {
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+}
+
+.gallery_content .swiper-slide {
+  width: 100% !important;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.gallery_content .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Improve sidebar responsiveness */
+@media (max-width: 768px) {
+  main aside {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
   }
 
-  .form_group {
-    flex-direction: column; /* Stack input fields vertically */
-    margin-bottom: 10px;
+  .menu-toggle:checked ~ main aside {
+    left: 0;
   }
 
-  form input.half_width {
-    width: 100%; /* Full width for half-width inputs on mobile */
+  .main_wrapper {
+    margin-left: 0;
+    width: 100%;
   }
 }
