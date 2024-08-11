@@ -1,0 +1,12 @@
+[
+build
+]
+  publish = "public"
+  command = "cp -r src public/ && mv public/src/* public/ && rm -r public/src"
+
+[[
+redirects
+]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
