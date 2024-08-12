@@ -18,12 +18,13 @@
   /* Home Section */
   .home_content {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 8rem;
     min-height: 100vh;
   }
 
   .home_text {
     max-width: 100%;
+    padding-right: 0;
   }
 
   .heading {
@@ -36,15 +37,13 @@
   }
 
   .home_content p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.4;
     margin-bottom: 0.8rem;
   }
 
   .home_img {
     max-width: 100%;
-    margin-top: -2rem;
-    border-radius: 8px;
   }
 
   .custom_btn {
