@@ -32,7 +32,7 @@
         // Re-enable the submit button after a short delay (if needed)
         setTimeout(() => {
           submitButton.disabled = false;
-          submitButton.textContent = "Send Message"; // Reset the button text for the next submission
+          submitButton.innerHTML = `Send Message <i class="fas fa-paper-plane"></i>`; // Reset the button text for the next submission
           submitButton.classList.remove("success", "failure"); // Remove any added classes
           form.reset(); // Reset the form fields
         }, 3000); // Adjust the delay as needed (in milliseconds)

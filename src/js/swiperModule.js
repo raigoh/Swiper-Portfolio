@@ -2,19 +2,22 @@ let mainSwiper;
 let gallerySwiper;
 
 function initMainSwiper() {
-  const isMobile = window.innerWidth <= 767;
+  const isMobile = window.innerWidth <= 767.98;
 
   const swiperCubeConfig = {
-    effect: "cube",
+    effect: isMobile ? "slide" : "cube", // Use slide effect on mobile for better performance
     allowTouchMove: isMobile,
     grabCursor: isMobile,
     cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: isMobile ? 20 : 40,
+      shadow: !isMobile, // Disable shadow on mobile
+      slideShadows: !isMobile, // Disable slide shadows on mobile
+      shadowOffset: isMobile ? 10 : 40,
       shadowScale: isMobile ? 0.94 : 0.6,
     },
     mousewheel: !isMobile,
+    slidesPerView: isMobile ? 1 : "auto", // Show one slide at a time on mobile
+    spaceBetween: isMobile ? 10 : 30, // Reduce space between slides on mobile
+    speed: isMobile ? 300 : 800, // Faster transitions on mobile
     on: {
       slideChange: function () {
         const links = document.querySelectorAll(".Links li");
@@ -22,10 +25,12 @@ function initMainSwiper() {
         links[this.realIndex].classList.add("activeLink");
 
         if (this.realIndex === 4 && !gallerySwiper) {
-          // Index of the gallery slide (0-based index)
-          setTimeout(() => {
-            gallerySwiper = initGallerySwiper();
-          }); // Delay to allow slide transition to complete
+          setTimeout(
+            () => {
+              gallerySwiper = initGallerySwiper();
+            },
+            isMobile ? 100 : 300
+          ); // Shorter delay on mobile
         } else if (this.realIndex !== 4 && gallerySwiper) {
           gallerySwiper.destroy(true, true);
           gallerySwiper = null;
@@ -34,31 +39,34 @@ function initMainSwiper() {
     },
   };
 
-  // Initialize Swiper with cube configuration
   return new Swiper(".mySwiper", swiperCubeConfig);
 }
 
 function initGallerySwiper() {
+  const isMobile = window.innerWidth <= 767.98;
+
   const gallerySwiperConfig = {
-    effect: "coverflow",
+    effect: isMobile ? "slide" : "coverflow", // Use slide effect on mobile
     grabCursor: false,
-    centeredSlides: true,
-    slidesPerView: "auto",
+    allowTouchMove: false,
+    centeredSlides: isMobile ? false : true,
+    slidesPerView: isMobile ? 1 : "auto",
+    spaceBetween: isMobile ? 10 : 30,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 400,
+      depth: isMobile ? 100 : 400,
       modifier: 1,
-      slideShadows: true,
+      slideShadows: !isMobile,
     },
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: isMobile ? 3000 : 5000,
       disableOnInteraction: false,
     },
     pagination: {
       el: ".swiper-pagination",
-      clickable: true,
+      clickable: false,
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -66,21 +74,24 @@ function initGallerySwiper() {
     },
   };
 
-  // Initialize Swiper with gallery configuration
   return new Swiper(".gallery-swiper", gallerySwiperConfig);
 }
 
 // Initialize Main Swiper on page load
 mainSwiper = initMainSwiper();
 
-// Reinitialize Main Swiper on window resize
+// Reinitialize Main Swiper on window resize with debounce
+let resizeTimer;
 window.addEventListener("resize", function () {
-  const activeIndex = mainSwiper.realIndex;
-  mainSwiper.destroy(true, true); // Destroy existing instance
-  gallerySwiper && gallerySwiper.destroy(true, true); // Destroy gallery swiper if it exists
-  gallerySwiper = null;
-  mainSwiper = initMainSwiper(); // Reinitialize Main Swiper
-  mainSwiper.slideTo(activeIndex, 0); // Navigate to the correct slide
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    const activeIndex = mainSwiper.realIndex;
+    mainSwiper.destroy(true, true);
+    gallerySwiper && gallerySwiper.destroy(true, true);
+    gallerySwiper = null;
+    mainSwiper = initMainSwiper();
+    mainSwiper.slideTo(activeIndex, 0);
+  }, 250);
 });
 
 // Function to navigate to a specific slide index
@@ -88,5 +99,49 @@ window.Navigate = function (indx) {
   const links = document.querySelectorAll(".Links li");
   links.forEach((link) => link.classList.remove("activeLink"));
   links[indx].classList.add("activeLink");
-  mainSwiper.slideTo(indx, 800, true);
+  mainSwiper.slideTo(indx, window.innerWidth <= 767.98 ? 300 : 800, true);
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cvBoxes = document.querySelectorAll(".cv_box");
+
+  cvBoxes.forEach((box) => {
+    box.addEventListener("click", function () {
+      this.classList.toggle("flipped");
+    });
+  });
+});
+
+// skillbar Animate
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const skillBars = document.querySelectorAll(".skill_bar");
+
+//   const animateSkillBars = () => {
+//     skillBars.forEach((bar) => {
+//       const target = bar.style.width;
+//       bar.style.width = "0%";
+//       setTimeout(() => {
+//         bar.style.width = target;
+//       }, 100);
+//     });
+//   };
+
+//   // Use Intersection Observer to trigger animation when skills section is in view
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           animateSkillBars();
+//           observer.unobserve(entry.target);
+//         }
+//       });
+//     },
+//     { threshold: 0.5 }
+//   );
+
+//   const skillsSection = document.querySelector(".about_skill_box");
+//   if (skillsSection) {
+//     observer.observe(skillsSection);
+//   }
+// });
