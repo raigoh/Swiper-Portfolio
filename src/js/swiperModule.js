@@ -16,6 +16,7 @@ function initMainSwiper() {
       shadowScale: isMobile ? 0.94 : 0.6,
     },
     mousewheel: !isMobile,
+    passiveListeners: true,
     slidesPerView: isMobile ? 1 : "auto",
     spaceBetween: isMobile ? 10 : 30,
     speed: isMobile ? 300 : 800,
@@ -88,22 +89,16 @@ function initGallerySwiper() {
 function animateSkillBars() {
   if (animationTriggered) return;
   animationTriggered = true;
-  console.log("Animating skill bars");
   const skillBars = document.querySelectorAll(".skill_bar");
-  console.log(`Found ${skillBars.length} skill bar elements`);
   skillBars.forEach((bar, index) => {
-    console.log(bar.outerHTML); // Log the entire element to check its structure
     let target = bar.style.width;
     if (target) {
-      console.log(`Skill bar ${index + 1} target width:`, target);
       bar.style.width = "0%";
       setTimeout(() => {
         bar.style.transition = "width 2s ease-out";
         bar.style.width = target;
-        console.log(`Skill bar ${index + 1} animated to:`, target);
       }, index * 500);
     } else {
-      console.error(`Skill bar ${index + 1} is missing data-width attribute`);
     }
   });
 }
@@ -115,12 +110,10 @@ function resetSkillBars() {
     bar.style.transition = "none";
     bar.style.width = "0%";
   });
-  console.log("Skill bars reset");
 }
 
 // Initialize Main Swiper on page load
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
   mainSwiper = initMainSwiper();
 });
 
