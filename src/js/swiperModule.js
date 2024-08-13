@@ -91,19 +91,29 @@ function animateSkillBars() {
   console.log("Animating skill bars");
   const skillBars = document.querySelectorAll(".skill_bar");
   console.log(`Found ${skillBars.length} skill bar elements`);
+
+  // Default skill percentages if data-width is missing
+  const defaultPercentages = ["80%", "65%", "75%", "90%", "70%"];
+
   skillBars.forEach((bar, index) => {
-    const target = bar.getAttribute("data-width");
-    if (target) {
-      console.log(`Skill bar ${index + 1} target width:`, target);
-      bar.style.width = "0%";
-      setTimeout(() => {
-        bar.style.transition = "width 2s ease-out";
-        bar.style.width = target;
-        console.log(`Skill bar ${index + 1} animated to:`, target);
-      }, index * 500);
-    } else {
-      console.error(`Skill bar ${index + 1} is missing data-width attribute`);
+    let target = bar.getAttribute("data-width");
+    if (!target) {
+      target = defaultPercentages[index] || "50%"; // Use 50% as fallback
+      bar.setAttribute("data-width", target);
+      console.log(
+        `Added missing data-width attribute to skill bar ${
+          index + 1
+        }: ${target}`
+      );
     }
+
+    console.log(`Skill bar ${index + 1} target width:`, target);
+    bar.style.width = "0%";
+    setTimeout(() => {
+      bar.style.transition = "width 2s ease-out";
+      bar.style.width = target;
+      console.log(`Skill bar ${index + 1} animated to:`, target);
+    }, index * 500);
   });
 }
 
