@@ -90,6 +90,7 @@ function animateSkillBars() {
   animationTriggered = true;
   console.log("Animating skill bars");
   const skillBars = document.querySelectorAll(".skill_bar");
+  console.log(`Found ${skillBars.length} skill bar elements`);
   skillBars.forEach((bar, index) => {
     const target = bar.getAttribute("data-width");
     if (target) {
