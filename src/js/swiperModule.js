@@ -16,7 +16,6 @@ function initMainSwiper() {
       shadowScale: isMobile ? 0.94 : 0.6,
     },
     mousewheel: !isMobile,
-    passiveListeners: true,
     slidesPerView: isMobile ? 1 : "auto",
     spaceBetween: isMobile ? 10 : 30,
     speed: isMobile ? 300 : 800,
