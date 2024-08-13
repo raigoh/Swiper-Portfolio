@@ -275,11 +275,6 @@ aside ul li.activeLink p {
   background-color: var(--primary-color);
   height: 100%;
   border-radius: 1rem;
-  width: 0%;
-}
-
-.skill_bar.animated {
-  background-color: var(--primary-color);
 }
 
 /* Services Section */
