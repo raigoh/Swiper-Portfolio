@@ -278,6 +278,10 @@ aside ul li.activeLink p {
   width: 0%;
 }
 
+.skill_bar.animated {
+  background-color: var(--primary-color);
+}
+
 /* Services Section */
 .service_content {
   margin: 0 auto;
