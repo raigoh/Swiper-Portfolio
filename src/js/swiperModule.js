@@ -92,13 +92,17 @@ function animateSkillBars() {
   const skillBars = document.querySelectorAll(".skill_bar");
   skillBars.forEach((bar, index) => {
     const target = bar.getAttribute("data-width");
-    console.log(`Skill bar ${index + 1} target width:`, target);
-    bar.style.width = "0%";
-    setTimeout(() => {
-      bar.style.transition = "width 2s ease-out";
-      bar.style.width = target;
-      console.log(`Skill bar ${index + 1} animated to:`, target);
-    }, index * 500);
+    if (target) {
+      console.log(`Skill bar ${index + 1} target width:`, target);
+      bar.style.width = "0%";
+      setTimeout(() => {
+        bar.style.transition = "width 2s ease-out";
+        bar.style.width = target;
+        console.log(`Skill bar ${index + 1} animated to:`, target);
+      }, index * 500);
+    } else {
+      console.error(`Skill bar ${index + 1} is missing data-width attribute`);
+    }
   });
 }
 
