@@ -92,12 +92,15 @@ function animateSkillBars() {
   skillBars.forEach((bar, index) => {
     let target = bar.style.width;
     if (target) {
+      console.log(`Skill bar ${index + 1} target width:`, target);
       bar.style.width = "0%";
       setTimeout(() => {
         bar.style.transition = "width 2s ease-out";
         bar.style.width = target;
+        console.log(`Skill bar ${index + 1} animated to:`, target);
       }, index * 500);
     } else {
+      console.error(`Skill bar ${index + 1} is missing data-width attribute`);
     }
   });
 }
@@ -109,10 +112,12 @@ function resetSkillBars() {
     bar.style.transition = "none";
     bar.style.width = "0%";
   });
+  console.log("Skill bars reset");
 }
 
 // Initialize Main Swiper on page load
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
   mainSwiper = initMainSwiper();
 });
 
