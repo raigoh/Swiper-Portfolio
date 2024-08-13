@@ -85,14 +85,26 @@ function initGallerySwiper() {
   return new Swiper(".gallery-swiper", gallerySwiperConfig);
 }
 
+// Function to store skill bar widths in data attributes
+function storeSkillBarWidths() {
+  const skillBars = document.querySelectorAll(".skill_bar");
+  skillBars.forEach((bar) => {
+    // Store the width in a data attribute if not already set
+    if (!bar.hasAttribute("data-width")) {
+      bar.setAttribute("data-width", bar.style.width);
+    }
+  });
+}
+
 function animateSkillBars() {
   if (animationTriggered) return;
   animationTriggered = true;
+  storeSkillBarWidths(); // Ensure widths are stored before animation
+
   const skillBars = document.querySelectorAll(".skill_bar");
-  console.log(`Found ${skillBars.length} skill bar elements`);
   skillBars.forEach((bar, index) => {
-    console.log(bar.outerHTML); // Log the entire element to check its structure
-    let target = bar.style.width;
+    // Retrieve the stored width from the data attribute
+    let target = bar.getAttribute("data-width");
     if (target) {
       console.log(`Skill bar ${index + 1} target width:`, target);
       bar.style.width = "0%";
