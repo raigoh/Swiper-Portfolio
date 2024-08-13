@@ -1,28 +1,36 @@
 let mainSwiper;
 let gallerySwiper;
+let animationTriggered = false;
 
 function initMainSwiper() {
   const isMobile = window.innerWidth <= 767.98;
 
   const swiperCubeConfig = {
-    effect: isMobile ? "slide" : "cube", // Use slide effect on mobile for better performance
+    effect: isMobile ? "slide" : "cube",
     allowTouchMove: isMobile,
     grabCursor: isMobile,
     cubeEffect: {
-      shadow: !isMobile, // Disable shadow on mobile
-      slideShadows: !isMobile, // Disable slide shadows on mobile
+      shadow: !isMobile,
+      slideShadows: !isMobile,
       shadowOffset: isMobile ? 10 : 40,
       shadowScale: isMobile ? 0.94 : 0.6,
     },
     mousewheel: !isMobile,
-    slidesPerView: isMobile ? 1 : "auto", // Show one slide at a time on mobile
-    spaceBetween: isMobile ? 10 : 30, // Reduce space between slides on mobile
-    speed: isMobile ? 300 : 800, // Faster transitions on mobile
+    slidesPerView: isMobile ? 1 : "auto",
+    spaceBetween: isMobile ? 10 : 30,
+    speed: isMobile ? 300 : 800,
     on: {
       slideChange: function () {
         const links = document.querySelectorAll(".Links li");
         links.forEach((link) => link.classList.remove("activeLink"));
         links[this.realIndex].classList.add("activeLink");
+
+        // Check if the current slide is the About Me slide (index 1)
+        if (this.realIndex === 1) {
+          animateSkillBars();
+        } else {
+          resetSkillBars();
+        }
 
         if (this.realIndex === 4 && !gallerySwiper) {
           setTimeout(
@@ -30,7 +38,7 @@ function initMainSwiper() {
               gallerySwiper = initGallerySwiper();
             },
             isMobile ? 100 : 300
-          ); // Shorter delay on mobile
+          );
         } else if (this.realIndex !== 4 && gallerySwiper) {
           gallerySwiper.destroy(true, true);
           gallerySwiper = null;
@@ -46,7 +54,7 @@ function initGallerySwiper() {
   const isMobile = window.innerWidth <= 767.98;
 
   const gallerySwiperConfig = {
-    effect: isMobile ? "slide" : "coverflow", // Use slide effect on mobile
+    effect: isMobile ? "slide" : "coverflow",
     grabCursor: false,
     allowTouchMove: false,
     centeredSlides: isMobile ? false : true,
@@ -77,8 +85,33 @@ function initGallerySwiper() {
   return new Swiper(".gallery-swiper", gallerySwiperConfig);
 }
 
+function animateSkillBars() {
+  if (animationTriggered) return;
+  animationTriggered = true;
+  const skillBars = document.querySelectorAll(".skill_bar");
+  skillBars.forEach((bar, index) => {
+    const target = bar.getAttribute("data-width");
+    bar.style.width = "0%";
+    setTimeout(() => {
+      bar.style.transition = "width 3s ease-out";
+      bar.style.width = target;
+    }, index * 500);
+  });
+}
+
+function resetSkillBars() {
+  animationTriggered = false;
+  const skillBars = document.querySelectorAll(".skill_bar");
+  skillBars.forEach((bar) => {
+    bar.style.transition = "none";
+    bar.style.width = "0%";
+  });
+}
+
 // Initialize Main Swiper on page load
-mainSwiper = initMainSwiper();
+document.addEventListener("DOMContentLoaded", () => {
+  mainSwiper = initMainSwiper();
+});
 
 // Reinitialize Main Swiper on window resize with debounce
 let resizeTimer;
@@ -102,6 +135,7 @@ window.Navigate = function (indx) {
   mainSwiper.slideTo(indx, window.innerWidth <= 767.98 ? 300 : 800, true);
 };
 
+// CV box flip functionality
 document.addEventListener("DOMContentLoaded", function () {
   const cvBoxes = document.querySelectorAll(".cv_box");
 
@@ -111,37 +145,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// skillbar Animate
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const skillBars = document.querySelectorAll(".skill_bar");
-
-//   const animateSkillBars = () => {
-//     skillBars.forEach((bar) => {
-//       const target = bar.style.width;
-//       bar.style.width = "0%";
-//       setTimeout(() => {
-//         bar.style.width = target;
-//       }, 100);
-//     });
-//   };
-
-//   // Use Intersection Observer to trigger animation when skills section is in view
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           animateSkillBars();
-//           observer.unobserve(entry.target);
-//         }
-//       });
-//     },
-//     { threshold: 0.5 }
-//   );
-
-//   const skillsSection = document.querySelector(".about_skill_box");
-//   if (skillsSection) {
-//     observer.observe(skillsSection);
-//   }
-// });

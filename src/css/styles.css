@@ -275,7 +275,7 @@ aside ul li.activeLink p {
   background-color: var(--primary-color);
   height: 100%;
   border-radius: 1rem;
-  transition: width 0.5s ease;
+  width: 0%;
 }
 
 /* Services Section */
@@ -533,7 +533,7 @@ aside ul li.activeLink p {
   position: relative;
   width: 100%;
   height: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .gallery-swiper .swiper-wrapper {
