@@ -1,6 +1,6 @@
 # Swiper Portfolio
 
-This repository contains the source code for a personal portfolio website. The site showcases various sections including Home, About Me, Services, CV, Gallery, and Contact Me. It uses SwiperJS for a cube effect on the main slides and coverflow effect on gallery slide, NodeJS for handling email functionality, and PM2 to keep the mailing service active.
+This repository contains the source code for a personal portfolio website. The site showcases various sections including Home, About Me, Services, CV, Gallery, and Contact Me. It uses SwiperJS for a cube effect on the main slides and coverflow effect on gallery slide, EmailJS for handling email functionality.
 
 ## Table of Contents
 
@@ -18,23 +18,14 @@ This repository contains the source code for a personal portfolio website. The s
 - **Responsive Design**: Ensures that the portfolio is viewable on devices of all sizes.
 - **Contact Form**: Allows users to send messages directly through the site, using NodeJS and Nodemailer.
 - **Gallery**: Displays a set of projects with a slider navigation.
-- **PM2**: Keeps the NodeJS server running for handling email submissions.
+- **EmailJS**: Utilizes EmailJS to handle email sending directly from the browser, simplifying the contact form functionality without requiring a backend server.
 
 ## Technologies Used
 
 - **HTML/CSS/JavaScript**: For the front-end development.
 - **SwiperJS**: For the cube effect on the main slides.
-- **NodeJS**: For the backend server handling the contact form submissions.
-- **Nodemailer**: For sending emails via the contact form.
-- **PM2**: For keeping the NodeJS server running continuously.
 
 ## Setup Instructions
-
-### Prerequisites
-
-- Node.js and npm installed on your machine.
-- A Gmail account for sending emails via Nodemailer.
-- PM2 installed globally (optional but recommended for production use).
 
 ### Installation
 
@@ -43,34 +34,6 @@ This repository contains the source code for a personal portfolio website. The s
    ```bash
    git clone https://github.com/raigoh/Swiper-Portfolio.git
    cd Swiper-Portfolio
-   ```
-
-2. **Install the dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables:**
-
-   Create a `.env` file in the root directory and add your email credentials:
-
-   ```env
-   EMAIL=your-email@gmail.com
-   PASSWORD=your-email-password
-   PORT=3000
-   ```
-
-4. **Run the server:**
-
-   ```bash
-   node sendMail.js
-   ```
-
-5. **For keeping the server running with PM2:**
-
-   ```bash
-   pm2 start sendMail.js
    ```
 
 ## Usage
@@ -83,11 +46,14 @@ This repository contains the source code for a personal portfolio website. The s
 ### Contact Form
 
 - Fill in your name, email, and message.
-- On submission, the form data is sent to the backend server, which then uses Nodemailer to send an email to the specified address.
+- On submission, the form data is sent directly to EmailJS, which handles the email sending process, delivering the message to the specified address without the need for a backend server.
 
 ### Gallery Navigation
 
 - Navigate through gallery images using the previous and next buttons.
+- Includes autoplay functionality to automatically cycle through images.
+- Hovering over a gallery card reveals descriptive text.
+- Clicking on a gallery card redirects you to the project's URL.
 
 ## File Structure
 
