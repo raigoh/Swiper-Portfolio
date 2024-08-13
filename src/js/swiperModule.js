@@ -93,7 +93,7 @@ function animateSkillBars() {
   console.log(`Found ${skillBars.length} skill bar elements`);
   skillBars.forEach((bar, index) => {
     console.log(bar.outerHTML); // Log the entire element to check its structure
-    let target = bar.getAttribute("data-width");
+    let target = bar.style.width;
     if (target) {
       console.log(`Skill bar ${index + 1} target width:`, target);
       bar.style.width = "0%";
