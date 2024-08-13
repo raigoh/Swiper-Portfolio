@@ -88,13 +88,16 @@ function initGallerySwiper() {
 function animateSkillBars() {
   if (animationTriggered) return;
   animationTriggered = true;
+  console.log("Animating skill bars");
   const skillBars = document.querySelectorAll(".skill_bar");
   skillBars.forEach((bar, index) => {
     const target = bar.getAttribute("data-width");
+    console.log(`Skill bar ${index + 1} target width:`, target);
     bar.style.width = "0%";
     setTimeout(() => {
-      bar.style.transition = "width 3s ease-out";
+      bar.style.transition = "width 2s ease-out";
       bar.style.width = target;
+      console.log(`Skill bar ${index + 1} animated to:`, target);
     }, index * 500);
   });
 }
@@ -106,10 +109,12 @@ function resetSkillBars() {
     bar.style.transition = "none";
     bar.style.width = "0%";
   });
+  console.log("Skill bars reset");
 }
 
 // Initialize Main Swiper on page load
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
   mainSwiper = initMainSwiper();
 });
 
