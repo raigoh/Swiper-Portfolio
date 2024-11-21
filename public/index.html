@@ -1,233 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/mobile.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
-    />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <main>
-      <!-- Sidebar -->
-      <aside>
-        <!-- Navigation links for different sections of the portfolio -->
-        <ul class="Links">
-          <li class="activeLink" onclick="Navigate(0)">
-            <i class="fa-solid fa-house"></i>
-            <p>Home</p>
-          </li>
-          <li onclick="Navigate(1)">
-            <i class="fa-solid fa-user"></i>
-            <p>About Me</p>
-          </li>
-          <li onclick="Navigate(2)">
-            <i class="fa-solid fa-list"></i>
-            <p>Services</p>
-          </li>
-          <li onclick="Navigate(3)">
-            <i class="fa fa-file"></i>
-            <p>CV</p>
-          </li>
-          <li onclick="Navigate(4)">
-            <i class="fa-solid fa-images"></i>
-            <p>Gallery</p>
-          </li>
-          <li onclick="Navigate(5)">
-            <i class="fa-solid fa-comments"></i>
-            <p>Contact Me</p>
-          </li>
-        </ul>
-      </aside>
 
-      <!-- Main Swiper with cube effect -->
-      <div class="main_wrapper">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <!-- Home slide -->
-            <div class="swiper-slide home-slider">
-              <div class="home_content">
-                <div class="home_text">
-                  <h1 class="heading">Hi! I am <span>Raigo Hoim</span></h1>
-                  <h3 class="heading2">
-                    A <span>Full-Stack Developer</span> student at Kood/Sisu
-                  </h3>
-                  <p>
-                    Hi! I am Raigo Hoim, a dedicated Full-Stack Developer
-                    student at Kood/Sisu. I have a passion for cybersecurity,
-                    DevOps, and frontend development, focusing on building
-                    responsive and user-friendly web applications using the
-                    latest technologies. My experience includes working with
-                    HTML, CSS, JavaScript, Golang, and various backend
-                    technologies. I am constantly learning and improving my
-                    skills to stay updated with industry trends. I thrive in
-                    collaborative environments and enjoy problem-solving to
-                    create innovative solutions.<br /><br />
-                    Feel free to explore my work and see how I can help bring
-                    your vision to life. Don't hesitate to get in touch, view my
-                    portfolio, or connect with me.
-                  </p>
-                  <div>
-                    <a class="custom_btn" href="#" onclick="Navigate(5)"
-                      >Contact Me</a
-                    >
-                  </div>
-                </div>
-                <div class="home_img">
-                  <img src="assets/images/me.jpg" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/src/css/styles.css" />
+  <link rel="stylesheet" href="/src/css/mobile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <main>
+    <!-- Sidebar -->
+    <aside>
+      <!-- Navigation links for different sections of the portfolio -->
+      <ul class="Links">
+        <li class="activeLink" onclick="Navigate(0)">
+          <i class="fa-solid fa-house"></i>
+          <p>Home</p>
+        </li>
+        <li onclick="Navigate(1)">
+          <i class="fa-solid fa-user"></i>
+          <p>About Me</p>
+        </li>
+        <li onclick="Navigate(2)">
+          <i class="fa-solid fa-list"></i>
+          <p>Services</p>
+        </li>
+        <li onclick="Navigate(3)">
+          <i class="fa fa-file"></i>
+          <p>CV</p>
+        </li>
+        <li onclick="Navigate(4)">
+          <i class="fa-solid fa-images"></i>
+          <p>Gallery</p>
+        </li>
+        <li onclick="Navigate(5)">
+          <i class="fa-solid fa-comments"></i>
+          <p>Contact Me</p>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Swiper with cube effect -->
+    <div class="main_wrapper">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Home slide -->
+          <div class="swiper-slide home-slider">
+            <div class="home_content">
+              <div class="home_text">
+                <h1 class="heading">Hi! I am <span>Raigo Hoim</span></h1>
+                <h3 class="heading2">
+                  A <span>Full-Stack Developer</span> student at Kood/Sisu
+                </h3>
+                <p>
+                  Hi! I am Raigo Hoim, a dedicated Full-Stack Developer
+                  student at Kood/Sisu. I have a passion for cybersecurity,
+                  DevOps, and frontend development, focusing on building
+                  responsive and user-friendly web applications using the
+                  latest technologies. My experience includes working with
+                  HTML, CSS, JavaScript, Golang, and various backend
+                  technologies. I am constantly learning and improving my
+                  skills to stay updated with industry trends. I thrive in
+                  collaborative environments and enjoy problem-solving to
+                  create innovative solutions.<br /><br />
+                  Feel free to explore my work and see how I can help bring
+                  your vision to life. Don't hesitate to get in touch, view my
+                  portfolio, or connect with me.
+                </p>
+                <div>
+                  <a class="custom_btn" href="#" onclick="Navigate(5)">Contact Me</a>
                 </div>
               </div>
+              <div class="home_img">
+                <img src="/src/assets/images/me.jpg" alt="" />
+              </div>
             </div>
+          </div>
 
-            <!-- About slide -->
-            <div class="swiper-slide about-slider">
-              <div class="about_content">
-                <div class="about_left">
-                  <h1 class="heading"><span>About Me</span></h1>
-                  <h3 class="heading2">
-                    A <span>Full-Stack Developer</span> student at Kood/Sisu
-                  </h3>
-                  <p>
-                    Hi, I'm Raigo Hoim. My journey into the tech world began
-                    when I started as an IT systems specialist. However, I
-                    wanted to dive deeper into coding and development, which led
-                    me to the incredible learning opportunity at Kood/Sisu.<br /><br />
-                    In the past three months at Kood/Sisu, I've been learning
-                    HTML, CSS, and Golang. Additionally, I have prior experience
-                    with JavaScript and Python from a six-month coding training
-                    program. I'm enthusiastic about creating secure, efficient,
-                    and user-friendly web applications and continuously
-                    improving my skills.<br /><br />
-                    Looking ahead, I aim to secure a role in cybersecurity,
-                    frontend development, or DevOps, where I can further develop
-                    my expertise and contribute to innovative projects. I'm
-                    excited about the possibilities and eager to grow in the
-                    tech industry.
-                  </p>
-                  <div class="about_row">
-                    <div class="about_col">
-                      <div class="about_border">
-                        <p><span>Experience</span><span>1 Year</span></p>
-                      </div>
-                      <div class="about_border">
-                        <p><span>Age</span><span>28</span></p>
-                      </div>
-                      <div class="about_border">
-                        <p>
-                          <span>Language Use</span>
-                          <span>HTML, CSS, Golang, Javascript, Python</span>
-                        </p>
-                      </div>
+          <!-- About slide -->
+          <div class="swiper-slide about-slider">
+            <div class="about_content">
+              <div class="about_left">
+                <h1 class="heading"><span>About Me</span></h1>
+                <h3 class="heading2">
+                  A <span>Full-Stack Developer</span> student at Kood/Sisu
+                </h3>
+                <p>
+                  Hi, I'm Raigo Hoim. My journey into the tech world began
+                  when I started as an IT systems specialist. However, I
+                  wanted to dive deeper into coding and development, which led
+                  me to the incredible learning opportunity at Kood/Sisu.<br /><br />
+                  In the past eight months at Kood/Sisu, I've been learning HTML, CSS, Golang, JavaScript, Node.js,
+                  React, Docker, and SQL. Additionally, I have prior experience with JavaScript and Python from a
+                  six-month coding training program. I'm enthusiastic about creating secure, efficient,
+                  and user-friendly web applications and continuously
+                  improving my skills.<br /><br />
+                  Looking ahead, I aim to secure a role in cybersecurity,
+                  frontend development, or DevOps, where I can further develop
+                  my expertise and contribute to innovative projects. I'm
+                  excited about the possibilities and eager to grow in the
+                  tech industry.
+                </p>
+                <div class="about_row">
+                  <div class="about_col">
+                    <div class="about_border">
+                      <p><span>Experience</span><span>1 Year</span></p>
                     </div>
-                    <div class="about_col">
-                      <div class="about_border">
-                        <p><span>Country</span><span>Finland</span></p>
-                      </div>
-                      <div class="about_border">
-                        <p><span>Phone</span><span>+358 406205747</span></p>
-                      </div>
-                      <div class="about_border">
-                        <p>
-                          <span>Degree</span>
-                          <span
-                            >Associate Degree in Junior IT Systems
-                            Specialist</span
-                          >
-                        </p>
-                      </div>
+                    <div class="about_border">
+                      <p><span>Age</span><span>28</span></p>
+                    </div>
+                    <div class="about_border">
+                      <p>
+                        <span>Language Use</span>
+                        <span>HTML, CSS, Golang, Javascript, Python</span>
+                      </p>
                     </div>
                   </div>
-                </div>
-                <div class="about_skill_box">
-                  <div class="skill_item">
-                    <p>HTML <span>90%</span></p>
-                    <div class="skill">
-                      <div class="skill_bar" style="width: 90%"></div>
+                  <div class="about_col">
+                    <div class="about_border">
+                      <p><span>Country</span><span>Finland</span></p>
                     </div>
-                  </div>
-                  <div class="skill_item">
-                    <p>CSS <span>85%</span></p>
-                    <div class="skill">
-                      <div class="skill_bar" style="width: 85%"></div>
+                    <div class="about_border">
+                      <p><span>Phone</span><span>+358 406205747</span></p>
                     </div>
-                  </div>
-                  <div class="skill_item">
-                    <p>JavaScript <span>75%</span></p>
-                    <div class="skill">
-                      <div class="skill_bar" style="width: 75%"></div>
-                    </div>
-                  </div>
-                  <div class="skill_item">
-                    <p>Golang <span>70%</span></p>
-                    <div class="skill">
-                      <div class="skill_bar" style="width: 70%"></div>
-                    </div>
-                  </div>
-                  <div class="skill_item">
-                    <p>Python <span>60%</span></p>
-                    <div class="skill">
-                      <div class="skill_bar" style="width: 60%"></div>
+                    <div class="about_border">
+                      <p>
+                        <span>Degree</span>
+                        <span>Associate Degree in Junior IT Systems
+                          Specialist</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="about_skill_box">
+                <div class="skill_item">
+                  <p>HTML <span>90%</span></p>
+                  <div class="skill">
+                    <div class="skill_bar" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill_item">
+                  <p>CSS <span>85%</span></p>
+                  <div class="skill">
+                    <div class="skill_bar" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill_item">
+                  <p>JavaScript <span>75%</span></p>
+                  <div class="skill">
+                    <div class="skill_bar" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="skill_item">
+                  <p>Golang <span>70%</span></p>
+                  <div class="skill">
+                    <div class="skill_bar" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="skill_item">
+                  <p>Python <span>60%</span></p>
+                  <div class="skill">
+                    <div class="skill_bar" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Services slide -->
-            <div class="swiper-slide services">
-              <div class="service_content">
-                <h2 class="heading"><span>Services</span></h2>
-                <div class="service_row">
-                  <div class="service_item">
-                    <i class="fa-solid fa-headset"></i>
-                    <h3>IT Support and Helpdesk</h3>
-                    <p>
-                      Providing reliable IT support and troubleshooting services
-                      for both individual and enterprise clients.
-                    </p>
-                  </div>
-                  <div class="service_item">
-                    <i class="fa fa-desktop"></i>
-                    <h3>PC and Server Installation</h3>
-                    <p>
-                      Comprehensive installation and setup services for personal
-                      computers and servers, ensuring optimal performance and
-                      security.
-                    </p>
-                  </div>
-                  <div class="service_item">
-                    <i class="fa-solid fa-sitemap"></i>
-                    <h3>Active Directory Management</h3>
-                    <p>
-                      Expert management of Active Directory environments,
-                      including user account creation, group management, and
-                      policy implementation.
-                    </p>
-                  </div>
-                  <div class="service_item">
-                    <i class="fa-brands fa-google"></i>
-                    <h3>Google Workspace Setup</h3>
-                    <p>
-                      End-to-end setup and administration of Google Workspace,
-                      enabling seamless communication and collaboration for
-                      businesses.
-                    </p>
-                  </div>
-                  <div class="service_item">
-                    <i class="fa-solid fa-pen-ruler"></i>
-                    <h3>Web Developer</h3>
-                    <p>
-                      Passionate and skilled in crafting responsive and dynamic
-                      websites. Proficient in front-end and back-end
-                      technologies, ensuring seamless user experiences and
-                      robust functionality.
-                    </p>
-                  </div>
-                  <!-- <div class="service_item">
+          <!-- Services slide -->
+          <div class="swiper-slide services">
+            <div class="service_content">
+              <h2 class="heading"><span>Services</span></h2>
+              <div class="service_row">
+                <div class="service_item">
+                  <i class="fa-solid fa-headset"></i>
+                  <h3>IT Support and Helpdesk</h3>
+                  <p>
+                    Providing reliable IT support and troubleshooting services
+                    for both individual and enterprise clients.
+                  </p>
+                </div>
+                <div class="service_item">
+                  <i class="fa fa-desktop"></i>
+                  <h3>PC and Server Installation</h3>
+                  <p>
+                    Comprehensive installation and setup services for personal
+                    computers and servers, ensuring optimal performance and
+                    security.
+                  </p>
+                </div>
+                <div class="service_item">
+                  <i class="fa-solid fa-sitemap"></i>
+                  <h3>Active Directory Management</h3>
+                  <p>
+                    Expert management of Active Directory environments,
+                    including user account creation, group management, and
+                    policy implementation.
+                  </p>
+                </div>
+                <div class="service_item">
+                  <i class="fa-brands fa-google"></i>
+                  <h3>Google Workspace Setup</h3>
+                  <p>
+                    End-to-end setup and administration of Google Workspace,
+                    enabling seamless communication and collaboration for
+                    businesses.
+                  </p>
+                </div>
+                <div class="service_item">
+                  <i class="fa-solid fa-pen-ruler"></i>
+                  <h3>Web Developer</h3>
+                  <p>
+                    Passionate and skilled in crafting responsive and dynamic
+                    websites. Proficient in front-end and back-end
+                    technologies, ensuring seamless user experiences and
+                    robust functionality.
+                  </p>
+                </div>
+                <!-- <div class="service_item">
                       <i class="fas fa-database"></i>
                       <h3>Database Admin</h3>
                       <p>
@@ -235,241 +229,187 @@
                         Totam, quidem!
                       </p>
                     </div> -->
-                </div>
               </div>
             </div>
+          </div>
 
-            <!-- CV slide -->
-            <div class="swiper-slide cv-slider">
-              <div class="cv_content">
-                <h1>My CV</h1>
-                <div class="cv_boxes">
-                  <div class="cv_box">
-                    <div class="cv_box-inner">
-                      <div class="cv_box-front">
-                        <img
-                          src="assets/images/english_res.png"
-                          alt="English CV"
-                        />
-                      </div>
-                      <div class="cv_box-back">
-                        <h3>English CV</h3>
-                        <p>
-                          Download my CV in English to learn more about my
-                          professional experience and skills.
-                        </p>
-                        <a
-                          href="assets/pdf/English_Raigo_Resume.pdf"
-                          class="cv_download-btn"
-                          download
-                          >Download CV</a
-                        >
-                      </div>
+          <!-- CV slide -->
+          <div class="swiper-slide cv-slider">
+            <div class="cv_content">
+              <h1>My CV</h1>
+              <div class="cv_boxes">
+                <div class="cv_box">
+                  <div class="cv_box-inner">
+                    <div class="cv_box-front">
+                      <img src="/src/assets/images/english_res.png" alt="English CV" />
+                    </div>
+                    <div class="cv_box-back">
+                      <h3>English CV</h3>
+                      <p>
+                        Download my CV in English to learn more about my
+                        professional experience and skills.
+                      </p>
+                      <a href="/src/assets/pdf/English_Raigo_Resume.pdf" class="cv_download-btn" download>Download
+                        CV</a>
                     </div>
                   </div>
-                  <div class="cv_box">
-                    <div class="cv_box-inner">
-                      <div class="cv_box-front">
-                        <img
-                          src="assets/images/finnish_res.png"
-                          alt="Finnish CV"
-                        />
-                      </div>
-                      <div class="cv_box-back">
-                        <h3>Finnish CV</h3>
-                        <p>
-                          Download my CV in Finnish to learn more about my
-                          professional experience and skills.
-                        </p>
-                        <a
-                          href="assets/pdf/Finnish_Raigo_Resume.pdf"
-                          class="cv_download-btn"
-                          download
-                          >Download CV</a
-                        >
-                      </div>
+                </div>
+                <div class="cv_box">
+                  <div class="cv_box-inner">
+                    <div class="cv_box-front">
+                      <img src="/src/assets/images/finnish_res.png" alt="Finnish CV" />
+                    </div>
+                    <div class="cv_box-back">
+                      <h3>Finnish CV</h3>
+                      <p>
+                        Download my CV in Finnish to learn more about my
+                        professional experience and skills.
+                      </p>
+                      <a href="/src/assets/pdf/Finnish_Raigo_Resume.pdf" class="cv_download-btn" download>Download
+                        CV</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Gallery slide -->
-            <div class="swiper-slide gallery">
-              <div class="gallery_content">
-                <h2 class="heading"><span>Gallery</span></h2>
-                <!-- Carousel slider -->
-                <div class="swiper-container gallery-swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
-                      <div class="swiper-carousel-animate-opacity">
-                        <a
-                          href="https://github.com/raigoh/Swiper-Portfolio"
-                          target="_blank"
-                        >
-                          <img
-                            src="assets/images/swiper-portfolio.png"
-                            alt=""
-                          />
-                          <div class="slide-content">
-                            <h2>Swiper Portfolio</h2>
-                            <p>
-                              This repository contains the source code for a
-                              personal portfolio website featuring sections such
-                              as Home, About Me, Services, CV, Gallery, and
-                              Contact Me. It uses SwiperJS for dynamic slide
-                              effects.
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="swiper-carousel-animate-opacity">
-                        <a
-                          href="https://github.com/raigoh/Sign-up-Form"
-                          target="_blank"
-                        >
-                          <img
-                            src="assets/images/Sign-up-Form_image.png"
-                            alt=""
-                          />
-                          <div class="slide-content">
-                            <h2>Sign Up Form</h2>
-                            <p>
-                              This is a simple sign-up page template created
-                              with HTML and CSS. It provides a clean and
-                              responsive design for user registration.
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="swiper-carousel-animate-opacity">
-                        <a
-                          href="https://github.com/raigoh/Admin-Dashboard"
-                          target="_blank"
-                        >
-                          <img src="assets/images/admin_dashboard.png" alt="" />
-                          <div class="slide-content">
-                            <h2>Admin Dashboard</h2>
-                            <p>
-                              This repository contains the HTML and CSS code for
-                              a static webpage called "Admin Dashboard." It is a
-                              user interface template that can be used as a
-                              starting point for creating an admin dashboard for
-                              web applications.
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="swiper-carousel-animate-opacity">
-                        <a
-                          href="https://github.com/raigoh/Battleship"
-                          target="_blank"
-                        >
-                          <img src="assets/images/battleship.png" alt="" />
-                          <div class="slide-content">
-                            <h2>Battleship</h2>
-                            <p>
-                              This is a simple Python implementation of the
-                              classic game Battleship. The game is played on an
-                              8x8 grid where you try to sink hidden battleships
-                              by guessing their locations.
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Add Pagination -->
-                  <div class="swiper-pagination"></div>
-                  <!-- Add Navigation Arrows -->
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Contact Me slide -->
-            <div class="swiper-slide contactMe">
-              <div class="contact_content">
-                <h1 class="heading">CONTACT ME</h1>
-                <div class="contact_container">
-                  <div class="contact_info">
-                    <div class="info_card">
-                      <i class="fas fa-phone-alt"></i>
-                      <h3>Phone</h3>
-                      <p>+358 406205747</p>
-                    </div>
-                    <div class="info_card">
-                      <i class="fas fa-map-marker-alt"></i>
-                      <h3>Location</h3>
-                      <p>Lapinlahti, Finland</p>
-                    </div>
-                    <div class="info_card">
-                      <i class="fas fa-envelope"></i>
-                      <h3>Email</h3>
-                      <p>vikationu@gmail.com</p>
-                    </div>
-                    <div class="social_links">
-                      <a
-                        href="https://www.facebook.com/raigo.hoim"
-                        target="_blank"
-                        aria-label="Facebook"
-                      >
-                        <i class="fab fa-facebook-f"></i>
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/raigo-hoim/"
-                        target="_blank"
-                        aria-label="LinkedIn"
-                      >
-                        <i class="fab fa-linkedin-in"></i>
+          <!-- Gallery slide -->
+          <div class="swiper-slide gallery">
+            <div class="gallery_content">
+              <h2 class="heading"><span>Gallery</span></h2>
+              <!-- Carousel slider -->
+              <div class="swiper-container gallery-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
+                    <div class="swiper-carousel-animate-opacity">
+                      <a href="https://github.com/raigoh/Swiper-Portfolio" target="_blank">
+                        <img src="/src/assets/images/swiper-portfolio.png" alt="" />
+                        <div class="slide-content">
+                          <h2>Swiper Portfolio</h2>
+                          <p>
+                            This repository contains the source code for a
+                            personal portfolio website featuring sections such
+                            as Home, About Me, Services, CV, Gallery, and
+                            Contact Me. It uses SwiperJS for dynamic slide
+                            effects.
+                          </p>
+                        </div>
                       </a>
                     </div>
                   </div>
-                  <div class="contact_form">
-                    <h2>Send me a message</h2>
-                    <form id="contact-form">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                      />
-                      <textarea
-                        name="message"
-                        placeholder="Message"
-                        rows="5"
-                        required
-                      ></textarea>
-                      <button type="submit" class="submit_btn">
-                        Send Message
-                        <i class="fas fa-paper-plane"></i>
-                      </button>
-                    </form>
+                  <div class="swiper-slide">
+                    <div class="swiper-carousel-animate-opacity">
+                      <a href="https://github.com/raigoh/Sign-up-Form" target="_blank">
+                        <img src="/src/assets/images/Sign-up-Form_image.png" alt="" />
+                        <div class="slide-content">
+                          <h2>Sign Up Form</h2>
+                          <p>
+                            This is a simple sign-up page template created
+                            with HTML and CSS. It provides a clean and
+                            responsive design for user registration.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-carousel-animate-opacity">
+                      <a href="https://github.com/raigoh/Admin-Dashboard" target="_blank">
+                        <img src="/src/assets/images/admin_dashboard.png" alt="" />
+                        <div class="slide-content">
+                          <h2>Admin Dashboard</h2>
+                          <p>
+                            This repository contains the HTML and CSS code for
+                            a static webpage called "Admin Dashboard." It is a
+                            user interface template that can be used as a
+                            starting point for creating an admin dashboard for
+                            web applications.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-carousel-animate-opacity">
+                      <a href="https://github.com/raigoh/Battleship" target="_blank">
+                        <img src="/src/assets/images/battleship.png" alt="" />
+                        <div class="slide-content">
+                          <h2>Battleship</h2>
+                          <p>
+                            This is a simple Python implementation of the
+                            classic game Battleship. The game is played on an
+                            8x8 grid where you try to sink hidden battleships
+                            by guessing their locations.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation Arrows -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Me slide -->
+          <div class="swiper-slide contactMe">
+            <div class="contact_content">
+              <h1 class="heading">CONTACT ME</h1>
+              <div class="contact_container">
+                <div class="contact_info">
+                  <div class="info_card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <p>+358 406205747</p>
+                  </div>
+                  <div class="info_card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Lapinlahti, Finland</p>
+                  </div>
+                  <div class="info_card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>vikationu@gmail.com</p>
+                  </div>
+                  <div class="social_links">
+                    <a href="https://www.facebook.com/raigo.hoim" target="_blank" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raigo-hoim/" target="_blank" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="contact_form">
+                  <h2>Send me a message</h2>
+                  <form id="contact-form">
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="submit_btn">
+                      Send Message
+                      <i class="fas fa-paper-plane"></i>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-    <script src="js/swiperModule.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/emailHandler.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+  <script src="/src/js/swiperModule.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="/src/js/emailHandler.js"></script>
+</body>
+
 </html>
